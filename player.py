@@ -9,6 +9,7 @@ class Player(pygame.sprite.Sprite):
         self.image.fill('blue')
         self.rect = self.image.get_rect(center = pos)
 
+        self.isOnGround = False
         self.direction = pygame.math.Vector2()
         self.pos = pygame.math.Vector2(self.rect.center)
         self.speed = 200
@@ -29,9 +30,8 @@ class Player(pygame.sprite.Sprite):
                 self.direction.x = -1
 
         if keys[pygame.K_SPACE]:
-                self.timers['tool use'].activate()
-                self.direction = pygame.math.Vector2()
-                self.frame_index = 0
+                self.direction.y = -5
+
 
         elif keys[pygame.K_UP]:
                 self.direction.y = -1
@@ -53,7 +53,16 @@ class Player(pygame.sprite.Sprite):
                 self.direction.x = 0
                 self.direction.y = 0
 
-        print(self.direction)
+        
+    def gravity():
+        if direction.y > 500 -20:
+            isOnGround = True
+        else:
+            direction.y = False
+
+        if isOnGround == False:
+         direction.y+=.1 #if not on ground, fall downwards
+
 
     def move(self, dt):
         self.pos += self.direction * self.speed * dt
@@ -62,4 +71,4 @@ class Player(pygame.sprite.Sprite):
     def update(self,dt):
         self.input()
         self.move(dt)
-       
+    
