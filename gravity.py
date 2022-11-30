@@ -35,7 +35,7 @@ class Player(pygame.sprite.Sprite):
 
         if keys[pygame.K_SPACE]:
 
-                self.direction.y = -2
+                self.direction.y = -.7
                 self.isOnGround = False
         
         elif keys[pygame.K_d]:
