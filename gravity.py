@@ -26,9 +26,6 @@ class Player(pygame.sprite.Sprite):
             self.direction.y += .2
 
         self.pos.y +=self.direction.y
-
-        
-
         
 
     def input(self):
@@ -37,16 +34,19 @@ class Player(pygame.sprite.Sprite):
  
 
         if keys[pygame.K_SPACE]:
-                self.direction.y = -5
+
+                self.direction.y = -2
                 self.isOnGround = False
         
         elif keys[pygame.K_d]:
                 self.direction.x = 1
-                self.status = "d"
+                self.direction.y = 0
+
 
         elif keys[pygame.K_a]:
                 self.direction.x = -1
-                self.status = "a"
+                self.direction.y = 0
+               
 
         else:
                 self.direction.x = 0
