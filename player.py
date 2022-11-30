@@ -29,9 +29,6 @@ class Player(pygame.sprite.Sprite):
                 self.direction.y = 1
                 self.direction.x = -1
 
-        if keys[pygame.K_SPACE]:
-                self.direction.y = -5
-
 
         elif keys[pygame.K_UP]:
                 self.direction.y = -1
@@ -54,14 +51,6 @@ class Player(pygame.sprite.Sprite):
                 self.direction.y = 0
 
         
-    def gravity():
-        if direction.y > 500 -20:
-            isOnGround = True
-        else:
-            direction.y = False
-
-        if isOnGround == False:
-         direction.y+=.1 #if not on ground, fall downwards
 
 
     def move(self, dt):
