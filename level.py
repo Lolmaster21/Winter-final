@@ -1,4 +1,4 @@
-import pygame
+import pygame 
 from settings import *
 from player import Player
 
@@ -19,8 +19,8 @@ class Level:
     def run(self, dt):
         self.display_surface.fill('black')
         self.all_sprites.draw(self.display_surface)
-        self.all_sprites.update(dt)
+        self.all_sprites.update(dt) 
+        pygame.draw.rect(screen,(200,200,200),(100,100,300,100))
 
        
-
 
