@@ -10,13 +10,18 @@ class Game:
         self.screen = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
         self.clock =pygame.time.Clock()
         self.level = Level()
+        self.ticker = 0
+        self.frameNum = 0
+
         
     def run(self):
         while True:
+            
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
+                
                     
             dt= self.clock.tick()/1000
             self.level.run(dt)
