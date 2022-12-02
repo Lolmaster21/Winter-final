@@ -14,48 +14,35 @@ class Player(pygame.sprite.Sprite):
         self.pos = pygame.math.Vector2(self.rect.center)
         self.speed = 200
       
-
     def gravity(self):
-        if self.pos.y > 720-32:
+        if self.pos.y > len(LEVEL_ONE * tile_size)-32:
             self.isOnGround = True
-            self.pos.y = 720-32 #Position
+            self.pos.y = len(LEVEL_ONE * tile_size)-32 #Position
         else: 
             self.isOnGround = False
 
         if self.isOnGround == False: #Gravity function 
             self.direction.y += .2
-     
- 
-     
 
         self.pos.y +=self.direction.y
-        
 
     def input(self):
            keys = pygame.key.get_pressed()
-
-         
            if keys[pygame.K_SPACE] == True and self.isOnGround == True:
                self.direction.y = -50 
                self.isOnGround = False
-
 
            elif keys[pygame.K_d]:
                 self.direction.x = 1
                 self.direction.y = 0
 
-        
            elif keys[pygame.K_a]:
                 self.direction.x = -1
                 self.direction.y = 0
 
-               
-
            else:
                 self.direction.x = 0
                 self.direction.y = 0
-
-
 
     def move(self, dt):
         self.pos += self.direction * self.speed * dt
