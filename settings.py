@@ -2,7 +2,7 @@ LEVEL_ONE = [
 '                            ',#1
 '                            ',#2
 ' xx    xxx             xx   ',#3
-' xx                         ',#4
+' xx p                       ',#4
 ' xxxx        xx          xx ',#5
 ' xxxx       xx              ',#6
 ' xx    x  xxxx    xx  xx    ',#7
